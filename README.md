@@ -1,7 +1,13 @@
 # extract_seed
-# this code is used to extract SAC file from seed/miniseed by calling rdseed or mseed2sac
-# rdseed and mseed2sac has to be installed before using this code
-# put the excutable code (rdseed, mseed2sac) path in the enivornment PATH
-# this code can extract SAC into any time sery length (less than one day) with any percantage of overlapping.
-# this code will fill the blanks with average amlitude
-# it can remove the respone, and do decimation
+#    extract data: (this code extract miniseed to SAC format data)
+#              executable file:"extract_seed_short" in directory "extract/src/"
+#              source file    :"extract_seed_short.f90", comple with make. This code can be used to extract both seed and mseed file.
+#                              With a little modifcation to extract earthquake data (e.g., extract_eq.f90)
+#              how to run     :a parameter file is needed with the form
+#                              "station.list
+#                              year_begin day_begin year_end day_end
+#                              seed_type(0 for mseed, 1 for seed) length_of_SAC_file_in_seconds multplication_in_percent number_of_component component
+#                              corner_frequency_f1 f2 remove_response_or_not(1/0) do_decimate_or_not(1/0)
+#                              Ouput_directory"
+#                              The station.list is the same as previous one
+#                              See the example: for_extract
